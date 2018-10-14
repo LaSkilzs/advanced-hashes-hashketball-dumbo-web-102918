@@ -192,6 +192,16 @@ def player_stats(player_name)
 end
 
 def big_shoe_rebounds
+  result = {}
+  biggest_size_shoe = 0
+  rebounds = 0
+  find_player(player_name).each do |name, stats|
+     stats.each do |stat, num|
+       biggest_size_shoe == num if stat == :shoe && num > biggest_size_shoe
+       rebounds = num if stat == :rebounds
+     end
+  end
+  rebounds
 end
 
 
