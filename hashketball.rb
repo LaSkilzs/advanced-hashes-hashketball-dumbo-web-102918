@@ -138,9 +138,6 @@ def find_player_stats(players_name, sym)
  result
 end
 
-def find_team(team_name)
-  
-end
 
 
 def num_points_scored(players_name)
@@ -152,7 +149,7 @@ def shoe_size(players_name)
 end
 
 def team_colors(team_name)
-  find_player_stats(players_)
+  if game_hash[:home][:team_name].equal?
 end
 
 
