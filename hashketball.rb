@@ -121,16 +121,25 @@ def game_hash
   
 end
 
-def num_points_scored(players_name)
+def find_team(players_name)
   if game_hash[:home][:players].keys.include?(players_name)
-    player_list = game_hash[:home][:players]
+    return  game_hash[:home][:players]
   elsif game_hash[:away][:players].keys.include?(players_name)
-    player_list = game_hash[:away][:players]
-  else
-    return nil
+    return game_hash[:away][:players]
   end
+end
+
+def num_points_scored(players_name)
+  # if game_hash[:home][:players].keys.include?(players_name)
+  #   player_list = game_hash[:home][:players]
+  # elsif game_hash[:away][:players].keys.include?(players_name)
+  #   player_list = game_hash[:away][:players]
+  # else
+  #   return nil
+  # end
   
  result = 0
+ find_team
  player_list.each do |name, hash|
   result = hash[:points] if name == players_name
  end
