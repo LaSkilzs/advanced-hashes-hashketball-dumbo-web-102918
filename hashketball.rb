@@ -165,13 +165,10 @@ end
 
 def find_location(team_name)
   if game_hash[:home][:team_name] == "Brooklyn Nets"
-    sym = :home
-    sym
-  elsif game_hash[:away][:team_name] == "Charlotte Hornets"
-    sym = :away
-    sym
+     game_hash[:home]
+  else
+    game_hash[:away]
   end
-  
 end
 
 def player_numbers(team_name)
@@ -179,7 +176,7 @@ def player_numbers(team_name)
   result = []
   players = game_hash[sym][:players]
   
-  players.each do |name,stats|
+  find_location(team_name).each do |name,stats|
     stats.each do |stat, num|
       result << num if stat == :number
      end
