@@ -250,13 +250,9 @@ def player_with_longest_name
   
   longest_name
 end
-
-def longest_name_steals_a_ton?
-  
-end
-
-def most_steals
+def player_with_the_most_steals
   most_steals = ""
+  steals = 0
   
   total_players.each do |name, stats|
     stats.each do |stat, num|
@@ -266,8 +262,12 @@ def most_steals
       end
     end
   end
+  most_steals
 end
 
+def longest_name_steals_a_ton?
+  player_with_longest_name == player_with_the_most_steals
+end
 
 
 
