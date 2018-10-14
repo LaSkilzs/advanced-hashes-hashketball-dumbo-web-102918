@@ -225,6 +225,20 @@ end
 
 
 def winning_team
+  home_total = 0
+    game_hash[:home][:players].each do |name, stats|
+      stats.each do |stat, num|
+       home_total += num  if stat == :points
+      end
+    end
+  away_total = 0
+    game_hash[:away][:players].each do |name, stats|
+      stats.each do |stat, num|
+        away_total += num if stat == :points
+      end
+    end
+    
+    home_total > away_total ? game_hash[:home][:team_name] : game_hash[:away][:team_name]
 end
 
 
