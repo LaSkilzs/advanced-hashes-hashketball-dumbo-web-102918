@@ -163,6 +163,18 @@ def team_names
   result
 end
 
+def team_stats(stat)
+  result = []
+  home_players = game_hash[:home][:players]
+  away_players = game_hash[:away][:players]
+    home_players.each do |name,stats|
+     stats.each do |stat, num|
+        result << num if stat == :number
+     end
+  end
+  p result.sort
+end
+
 
 
 
