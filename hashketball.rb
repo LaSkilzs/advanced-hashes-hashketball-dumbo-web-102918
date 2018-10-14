@@ -150,9 +150,9 @@ end
 
 def team_colors(team_name)
   if game_hash[:home][:team_name].eql?(team_name)
-    return game_hash[:home][:team_name][:colors].join(", ")
+    return game_hash[:home][:colors]
   else
-    return game_hash[:away][:team_name][:colors].join(", ")
+    return game_hash[:away][:colors]
   end
 end
 
