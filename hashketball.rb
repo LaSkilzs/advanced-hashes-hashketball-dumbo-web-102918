@@ -255,6 +255,20 @@ def longest_name_steals_a_ton?
   
 end
 
+def most_steals
+  most_steals = ""
+  
+  total_players.each do |name, stats|
+    stats.each do |stat, num|
+      if stat == :steals && num > steals
+        steals = num
+        most_steals = name
+      end
+    end
+  end
+end
+
+
 
 
 
