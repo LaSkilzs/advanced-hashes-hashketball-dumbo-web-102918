@@ -172,11 +172,10 @@ def find_location(team_name)
 end
 
 def player_numbers(team_name)
-  sym = find_location(team_name)
   result = []
-  players = game_hash[sym][:players]
+  players = find_location(team_name)[:players]
   
-  find_location(team_name).each do |name,stats|
+  players.each do |name,stats|
     stats.each do |stat, num|
       result << num if stat == :number
      end
