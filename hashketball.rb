@@ -196,7 +196,6 @@ def total_players
 end
 
 def big_shoe_rebounds
-  result = {}
   biggest_size_shoe = 0
   rebounds = 0
   total_players.each do |name, stats|
@@ -206,6 +205,11 @@ def big_shoe_rebounds
      end
   end
   rebounds
+end
+
+
+def most_points_scored
+  
 end
 
 
