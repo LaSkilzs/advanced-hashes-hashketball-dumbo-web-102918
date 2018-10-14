@@ -140,11 +140,7 @@ end
 
 
 def num_points_scored(players_name)
- result = 0
- find_team(players_name).each do |name, hash|
-  result = hash[:points] if name == players_name
- end
- result
+  find_player_stats(players_name,:points)
 end
 
 def shoe_size(players_name)
