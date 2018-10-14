@@ -82,6 +82,19 @@ def game_hash
 end
 
 def num_points_scored(players_name)
+  if game_hash[:home][:players].keys.include?(players_name)
+    player_list = game_hash[:home][:players]
+  elsif game_hash[:away][:players].keys.include?(players_name)
+    player_list = game_hash[:away][:players]
+  else
+    return nil
+  end
+  
+ result = 0
+ player_list.each do |name, hash|
+  result = hash[:points] if name == players_name
+ end
+ result
 end
 
 
