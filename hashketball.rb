@@ -242,6 +242,13 @@ def winning_team
 end
 
 def player_with_longest_name
+  longest_name = ""
+  
+  total_players.each do |name, stats|
+    longest_name = name if name.count > longest_name
+  end
+  
+  longest_name
 end
 
 
