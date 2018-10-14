@@ -173,9 +173,9 @@ end
 
 def player_numbers(team_name)
   result = []
-  players = find_location(team_name)[:players]
+  players = find_location(team_name)
   
-  players.each do |name,stats|
+  players[:players].each do |name,stats|
     stats.each do |stat, num|
       result << num if stat == :number
      end
