@@ -183,7 +183,11 @@ def player_numbers(team_name)
   result.sort
 end
 
-
+def player_stats(player_name)
+  player_list = find_player(player_name)
+  player_list.each{|k,v| puts v if k == player_name}
+  
+end
 
 
 
