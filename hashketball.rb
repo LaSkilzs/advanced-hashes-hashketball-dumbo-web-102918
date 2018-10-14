@@ -163,7 +163,8 @@ def team_names
   result
 end
 
-def team_stats(stat)
+def team_stats(team_name, stat)
+  
   result = []
   home_players = game_hash[:home][:players]
   away_players = game_hash[:away][:players]
