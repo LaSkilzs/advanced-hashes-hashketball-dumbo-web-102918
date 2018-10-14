@@ -131,7 +131,6 @@ def find_team(players_name)
 end
 
 def find_player_stats(players_name, sym)
- sym = :points
  result = 0
  find_team(players_name).each do |name, hash|
   result = hash[sym] if name == players_name
