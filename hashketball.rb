@@ -165,6 +165,7 @@ end
 
 def find_location(team_name)
   if game_hash[:home][:team_name] == "Brooklyn Nets"
+    :home
   else
     :away
   end
