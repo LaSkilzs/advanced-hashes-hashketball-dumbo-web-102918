@@ -122,7 +122,7 @@ def game_hash
 end
 
 
-def find_team(players_name)
+def find_player(players_name)
   if game_hash[:home][:players].keys.include?(players_name)
     return  game_hash[:home][:players]
   elsif game_hash[:away][:players].keys.include?(players_name)
@@ -132,10 +132,14 @@ end
 
 def find_player_stats(players_name, sym)
  result = 0
- find_team(players_name).each do |name, hash|
+ find_player(players_name).each do |name, hash|
   result = hash[sym] if name == players_name
  end
  result
+end
+
+def find_team(team_name)
+  
 end
 
 
@@ -145,6 +149,10 @@ end
 
 def shoe_size(players_name)
   find_player_stats(players_name,:shoe)
+end
+
+def team_colors(team_name)
+  find_player_stats(players_)
 end
 
 
