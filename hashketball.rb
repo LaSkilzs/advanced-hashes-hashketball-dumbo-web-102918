@@ -163,17 +163,25 @@ def team_names
   result
 end
 
-def team_stats(team_name, stat)
-  
+def find_location(team_name)
+  if game_hash[:home][:team_name] == "Brooklyn Nets"
+    return :home
+  else
+    :away
+  end
+end
+
+def player_numbers(team_name)
+  sym = find_location(team_name)
   result = []
-  home_players = game_hash[:home][:players]
-  away_players = game_hash[:away][:players]
-    home_players.each do |name,stats|
-     stats.each do |stat, num|
-        result << num if stat == :number
+  players = game_hash[sym][:players]
+  
+  players.each do |name,stats|
+    stats.each do |stat, num|
+      result << num if stat == :number
      end
   end
-  p result.sort
+  result.sort
 end
 
 
