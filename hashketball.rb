@@ -184,12 +184,8 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-  player_list = find_player(player_name)
-  player_list.each do |k,v|
-    v.each do |name, stats|
-      puts stats if name == player_name
-    end
-  end
+  find_player(player_name)
+
 end
 
 
