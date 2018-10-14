@@ -174,7 +174,7 @@ end
 def player_numbers(team_name)
   sym = find_location(team_name)
   result = []
-  players = game_hash[sym][:players]
+  players = game_hash[:away][:players]
   
   players.each do |name,stats|
     stats.each do |stat, num|
