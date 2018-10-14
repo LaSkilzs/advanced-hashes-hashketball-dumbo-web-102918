@@ -164,7 +164,7 @@ def team_names
 end
 
 def find_location(team_name)
-  if game_hash[:home][:team_name] == "Brooklyn Nets"
+  if game_hash[:home][:team_name] == team_name
      game_hash[:home]
   else
     game_hash[:away]
