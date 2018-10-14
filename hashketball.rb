@@ -209,7 +209,18 @@ end
 
 
 def most_points_scored
+  name_most_points = ""
+  points = 0
   
+  total_players.each do |name, stats|
+    stats.each do |stat, num|
+      if stat == :points && num > points
+        name_most_points = name
+        points = num
+      end
+    end
+  end
+  name_most_points
 end
 
 
